@@ -37,8 +37,8 @@ public class Application {
 						} else {
 							throw new InvalidChoiceException();
 						}
-						choice = -1;
 					}
+					choice = -1;
 				}else if(choice == 2) {
 					choice = 0;
 					while(choice != 4) {
@@ -74,12 +74,15 @@ public class Application {
 			} catch (NumberFormatException e) {
 				System.out.println("Please enter numberic value..!!");
 				System.out.println("Navigating back to the main menu");
+				choice = -1;
 			} catch (DirectoryDoesNotExistException e) {
 				System.out.println(e.getMessage());
 				System.out.println("Navigating back to the main menu");
+				choice=-1;
 			} catch (InvalidChoiceException e) {
 				System.out.println(e.getMessage());
 				System.out.println("Navigating back to the main menu");
+				choice = -1;
 			}
 		}
 		sc.close();
